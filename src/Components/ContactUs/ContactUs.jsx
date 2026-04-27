@@ -91,7 +91,7 @@ viewport={{once:false}}
         </div>
 
         <button type="submit" className='w-max flex gap-2 bg-primary text-white text-sm px-10 py-3 rounded-full cursor-pointer hover:scale-103 transition-all'>
-          Submit <img src={assets.arrow_icon} alt="" className='w-4' />
+          Submit 
         </button>
 
 

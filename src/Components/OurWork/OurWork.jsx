@@ -3,33 +3,39 @@ import React from "react";
 import Title from "../Title/Title";
 import assets from "../../assets/assets";
 import { motion } from "motion/react";
-
+import { useNavigate } from "react-router-dom";
 
 const OurWork = () => {
 
+    const navigate = useNavigate();
+
     const workData=[
         {
-            title:"Mobile App Marketing",
-            description : "we turn bold ideas into powerful digital solutions that connect, engage...",
-            icon : assets.work_mobile_app
+            title:"Web Development",
+            description : "we help you to create powerful websites built to grow your business..",
+            icon : assets.webd2,
+            path: "/web-development"
         },
         {
-            title:"Dashboard Management",
+            title:"Instagram Dashboard Management",
+            description : "we help you to build a strong social media presence and engage with your audience",
+            icon : assets.instaimg,
+            path: "/social-media"
+        },
+        {
+            title:"Graphical Promotion",
             description : "we help you to execute your plan and deliver results.",
-            icon : assets.work_dashboard_management
-        },
-        {
-            title:"Fitness App Promotion",
-            description : "we help you to create a marketing strategy that drives results.",
-            icon : assets.work_fitness_app
+            icon : assets.graphics,
+            path: "/graphic-design"
         },
     ]
+
   return (
     <motion.div
-    initial="hidden"
-        whileInView="visible"
-        transition={{ straggerchildren:0.2 }}
-        viewport={{ once: false }}
+      initial="hidden"
+      whileInView="visible"
+      transition={{ straggerchildren:0.2 }}
+      viewport={{ once: false }}
       id="our-work"
       className="flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-gray-700 dark:text-white"
     >
@@ -42,11 +48,14 @@ const OurWork = () => {
         {
             workData.map((work,index)=>(
             <motion.div 
-            initial ={{opacity:0,y:30}}
-    whileInView ={{opacity:1,y:0}}
-    transition={{duration:0.5,delay:index * 0.2}}
-    viewport={{once:false}}
-            key={index} className="hover:scale-102 duration-500 transition-all cursor-pointer">
+              initial={{opacity:0,y:30}}
+              whileInView={{opacity:1,y:0}}
+              transition={{duration:0.5,delay:index * 0.2}}
+              viewport={{once:false}}
+              key={index}
+              onClick={() => navigate(work.path)}   // 👈 ONLY CHANGE
+              className="hover:scale-102 duration-500 transition-all cursor-pointer"
+            >
                 <img src={work.icon} className="w-full rounded-xl" alt="" />
                 <h3 className="mt-3 mb-2 text-lg font-semibold">{work.title}</h3>
                 <p className="text-sm opacity-60 w-5/6">{work.description}</p>

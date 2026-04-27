@@ -1,6 +1,5 @@
 import logo from './logo.svg'
 import arrow_icon from './arrow_icon.svg'
-import group_profile from './group_profile.png'
 import bgImage1 from './bgImage1.png'
 import bgImage2 from './bgImage2.png'
 import hero_img from './hero_img.png'
@@ -29,6 +28,33 @@ import google_logo from './google_logo.svg'
 import menu_icon_dark from './menu_icon_dark.svg'
 import sun_icon from './sun_icon.svg'
 import moon_icon from './moon_icon.svg'
+import logoWhite from '../assets/logoWhite.svg'
+import logowhite from '../assets/logowhite.PNG'
+import logoBlack from '../assets/logoBlack.PNG'
+import logowhite1 from '../assets/logowhite1.PNG'
+import logoBlack1 from '../assets/logoBlack1.PNG'
+import herelogo from '../assets/grouplogo.PNG'
+import herelogo1 from '../assets/grouplogo1.png'
+import bglogo from '../assets/bglogo.png'
+import bglogo2 from '../assets/bglogo2.png'
+import heroimg1 from '../assets/heroimg1.png'
+import heroimg2 from '../assets/heroimg2.PNG'
+
+
+import instaimg from '../assets/instaimg.PNG'
+import webd from '../assets/webd.PNG'
+import webd2 from '../assets/webd2.PNG'
+
+import graphics from '../assets/graphics.PNG'
+
+import user from '../assets/userlogo.png'
+
+
+
+
+
+
+
 
 
 export const company_logos = [
@@ -42,8 +68,22 @@ export const company_logos = [
 
 const assets = {
   logo,
+  webd2,
+  instaimg,
+  webd,
+  graphics,
+  heroimg2,
+  heroimg1,
+  bglogo2,
+  bglogo,
+  herelogo,
+  herelogo1,
+  logowhite1,
+  logoBlack1,
+  logoBlack,
+  logowhite,
   arrow_icon,
-  group_profile,
+  logoWhite,
   bgImage1,
   bgImage2,
   hero_img,
@@ -71,12 +111,12 @@ const assets = {
 export default assets
 
 export const teamData = [
-  { name: 'Haley Carter', title: 'CEO & founder', image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200' },
-  { name: 'James Walker', title: 'Ads manager', image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200' },
-  { name: 'Jessica Morgan', title: 'Vice president', image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop' },
-  { name: 'Ashley Bennett', title: 'Marketing & sales', image: 'https://randomuser.me/api/portraits/women/10.jpg' },
-  { name: 'Emily Parker', title: 'Content marketer', image: 'https://randomuser.me/api/portraits/women/11.jpg' },
-  { name: 'Ryan Mitchell', title: 'Content writer', image: 'https://randomuser.me/api/portraits/men/9.jpg' },
-  { name: 'Megan Brooks', title: 'Performance manager', image: 'https://randomuser.me/api/portraits/women/12.jpg' },
-  { name: 'Amber Foster', title: 'Senior writer', image: 'https://randomuser.me/api/portraits/women/14.jpg' },
+  { name: 'Haley Carter', title: 'CEO & founder', image: user },
+  { name: 'James Walker', title: 'Ads manager', image: user },
+  { name: 'Jessica Morgan', title: 'Vice president', image: user },
+  { name: 'Ashley Bennett', title: 'Marketing & sales', image: user },
+  { name: 'Emily Parker', title: 'Content marketer', image: user },
+  { name: 'Ryan Mitchell', title: 'Content writer', image: user },
+  { name: 'Megan Brooks', title: 'Performance manager', image: user },
+  { name: 'Amber Foster', title: 'Senior writer', image: user },
 ]

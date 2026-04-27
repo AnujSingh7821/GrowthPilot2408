@@ -19,7 +19,7 @@ const TrustedBy = () => {
         viewport={{ once: false }}
         className="font-semibold"
       >
-        Trusted by leading companies
+        Trusted leading companies are
       </motion.h3>
 
       <motion.div
