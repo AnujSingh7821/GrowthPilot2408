@@ -1,4 +1,4 @@
-import logo from './logo.svg'
+
 import arrow_icon from './arrow_icon.svg'
 import bgImage1 from './bgImage1.png'
 import bgImage2 from './bgImage2.png'
@@ -22,27 +22,22 @@ import facebook_icon from './facebook_icon.svg'
 import twitter_icon from './twitter_icon.svg'
 import instagram_icon from './instagram_icon.svg'
 import linkedin_icon from './linkedin_icon.svg'
-import logo_dark from './logo_dark.svg'
 import airbnb_logo from './airbnb_logo.svg'
 import google_logo from './google_logo.svg'
 import menu_icon_dark from './menu_icon_dark.svg'
 import sun_icon from './sun_icon.svg'
 import moon_icon from './moon_icon.svg'
-import logoWhite from '../assets/logoWhite.svg'
-import logowhite from '../assets/logowhite.PNG'
-import logoBlack from '../assets/logoBlack.PNG'
+
 import logowhite1 from '../assets/logowhite1.PNG'
 import logoBlack1 from '../assets/logoBlack1.PNG'
-import herelogo from '../assets/grouplogo.PNG'
 import herelogo1 from '../assets/grouplogo1.png'
 import bglogo from '../assets/bglogo.png'
-import bglogo2 from '../assets/bglogo2.png'
 import heroimg1 from '../assets/heroimg1.png'
 import heroimg2 from '../assets/heroimg2.PNG'
 
 
 import instaimg from '../assets/instaimg.PNG'
-import webd from '../assets/webd.PNG'
+
 import webd2 from '../assets/webd2.PNG'
 
 import graphics from '../assets/graphics.PNG'
@@ -67,23 +62,17 @@ export const company_logos = [
 ]
 
 const assets = {
-  logo,
+
   webd2,
   instaimg,
-  webd,
   graphics,
   heroimg2,
   heroimg1,
-  bglogo2,
   bglogo,
-  herelogo,
   herelogo1,
   logowhite1,
   logoBlack1,
-  logoBlack,
-  logowhite,
   arrow_icon,
-  logoWhite,
   bgImage1,
   bgImage2,
   hero_img,
@@ -102,7 +91,6 @@ const assets = {
   twitter_icon,
   instagram_icon,
   linkedin_icon,
-  logo_dark,
   menu_icon_dark,
   sun_icon,
   moon_icon
