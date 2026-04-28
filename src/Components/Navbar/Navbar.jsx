@@ -46,7 +46,7 @@ const Navbar = ({ theme, setTheme }) => {
 
         {/* ROUTE LINKS */}
         <a onClick={() => handleNav('/')} className='sm:hover:border-b cursor-pointer'>Home</a>
-        <a onClick={() => handleNav('/team')} className='sm:hover:border-b cursor-pointer'>About</a>
+        <a onClick={() => handleNav('/about')} className='sm:hover:border-b cursor-pointer'>About</a>
         <a onClick={() => handleNav('/services')} className='sm:hover:border-b cursor-pointer'>Process</a>
         <a onClick={() => handleNav('/work')} className='sm:hover:border-b cursor-pointer'>Our Work</a>
         <a onClick={() => handleNav('/contact')} className='sm:hover:border-b cursor-pointer'>Contact Us</a>

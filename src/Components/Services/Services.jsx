@@ -13,10 +13,10 @@ const Services = () => {
 
     const servicesData =[
         {
-            title : "Advertising",
-            description : " we turn bold ideas into powerful digital solutions that connect, engage...",
-            icon : assets.ads_icon,
-            path: "/advertising"
+            title : "Social Media Marketing",
+            description : " we help you to build a strong social media presence and engage with your audience",
+            icon : assets.social_icon,
+            path: "/social-media"
         },
         {
             title : "Graphic Designing",
@@ -31,10 +31,10 @@ const Services = () => {
             path: "/web-development"
         },
         {
-            title : "Social Media Marketing",
-            description : " we help you to build a strong social media presence and engage with your audience",
-            icon : assets.social_icon,
-            path: "/social-media"
+            title : "Advertising",
+            description : " we turn bold ideas into powerful digital solutions that connect, engage...",
+            icon : assets.ads_icon,
+            path: "/advertising"
         },
     ]
 

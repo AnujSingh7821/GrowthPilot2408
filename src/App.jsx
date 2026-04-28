@@ -10,6 +10,7 @@ import { Toaster } from "react-hot-toast";
 import Footer from "./Components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import ServiceDetails from "./Components/ServiceDetails/ServiceDetails"
+import About from "./Components/About/About";
 
 function App() {
   const [theme, setTheme] = useState(
@@ -74,6 +75,8 @@ function App() {
         <Route path="/work" element={<OurWork />} />
         <Route path="/team" element={<Team />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/about" element={<About />} />
+
 
         <Route path="/:serviceId" element={<ServiceDetails />} />
       </Routes>
