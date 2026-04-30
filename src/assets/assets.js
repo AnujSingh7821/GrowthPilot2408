@@ -39,6 +39,13 @@ import whatsapp_icon1 from '../assets/whatsapp1.png'
 import about_img1 from '../assets/about_img1.jpeg'
 import about_img2 from '../assets/about_img2.jpeg'
 import about_img3 from '../assets/about_img3.jpeg'
+import bgimg from '../assets/bgimg.png'
+import bgimg2 from '../assets/bgimg2.png'
+import bgimg3 from '../assets/bgimg3.png'
+import bgimg4 from '../assets/bgimg4.png'
+
+
+
 
 
 
@@ -72,6 +79,10 @@ export const company_logos = [
 const assets = {
 
   webd2,
+  bgimg2,
+  bgimg3,
+  bgimg4,
+  bgimg,
   about_img3,
   about_img2,
   about_img1,
