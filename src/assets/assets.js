@@ -31,6 +31,7 @@ import moon_icon from './moon_icon.svg'
 import logowhite1 from '../assets/logowhite1.PNG'
 import logoBlack1 from '../assets/logoBlack1.PNG'
 import herelogo1 from '../assets/grouplogo1.png'
+import heroimg3 from '../assets/heroimg123.PNG'
 import bglogo from '../assets/bglogo.png'
 import heroimg1 from '../assets/heroimg1.png'
 import heroimg2 from '../assets/heroimg2.PNG'
@@ -94,6 +95,7 @@ const assets = {
   heroimg1,
   bglogo,
   herelogo1,
+  heroimg3,
   logowhite1,
   logoBlack1,
   arrow_icon,

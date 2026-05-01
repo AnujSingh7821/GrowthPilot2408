@@ -53,11 +53,7 @@ const About = () => {
 
             <p className="opacity-70 mb-4 text-xl font-semibold">
               At Growth Pilot, we believe in authentic and sustainable growth
-              strategies. We prioritize real engagement, quality audience
-              targeting, and long-term results over short-term gains. In addition
-              to social media growth, we provide professional web development and
-              creative graphic design services to help businesses build a strong
-              and cohesive digital identity.
+              strategies.
             </p>
 
             <p className="opacity-70">
@@ -67,7 +63,7 @@ const About = () => {
           </div>
 
           <div className="flex-1">
-            <img src={assets.about_img1} className="rounded-xl w-full hover:scale-105 transition duration-500" alt="" />
+            <img src={assets.about_img2} className="rounded-xl w-full hover:scale-105 transition duration-500" alt="" />
           </div>
         </motion.div>
 
@@ -78,7 +74,7 @@ const About = () => {
           className="flex flex-col lg:flex-row items-center gap-10"
         >
           <div className="flex-1">
-            <img src={assets.about_img2} className="rounded-xl w-full hover:scale-105 transition duration-500" alt="" />
+            <img src={assets.about_img1} className="rounded-xl w-full hover:scale-105 transition duration-500" alt="" />
           </div>
 
           <div className="flex-1">
@@ -86,61 +82,89 @@ const About = () => {
 
             <p className="opacity-70 mb-4">
               We are a digital growth platform helping creators, businesses, and
-              marketers grow their audience using data-driven strategies.
+              marketers grow their audience.
             </p>
 
             <p className="opacity-70">
-              Our goal is to provide transparency, long-term engagement, and
-              scalable growth solutions.
+              Our goal is to provide transparency and scalable growth.
             </p>
           </div>
         </motion.div>
 
-        {/* TOOLS / SERVICES */}
+        {/* NEW SECTION (Transparency & Safety) */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="text-center"
-        >
-          <p className="opacity-80 mb-10">
-            We support your growth through multiple solutions.
-          </p>
-        </motion.div>
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  className="flex flex-col gap-12"
+>
+  {/* Heading */}
+  <div className="text-center max-w-3xl mx-auto">
+    <div className="flex justify-center mb-4">
+      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-green-100 text-green-600 text-2xl">
+        ✓
+      </div>
+    </div>
 
-        {/* MISSION */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="flex flex-col lg:flex-row items-center gap-10 bg-white/40 dark:bg-white/5 backdrop-blur-xl p-8 rounded-2xl border border-white/20 hover:shadow-[0_0_40px_rgba(79,70,229,0.3)] transition-all duration-500"
-        >
-          <div className="flex-1">
-            <h2 className="text-2xl font-semibold mb-4">
-              Why Users Choose Growth Pilot
-            </h2>
+    <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+      Transparency & User Safety
+    </h2>
 
-            <p className="opacity-70">
-              People choose Growth Pilot because we make social media growth
-              simple, reliable, and results-driven.
-            </p>
+    <p className="opacity-70">
+      We aim to be transparent in all aspects and keep users safe while using our platform.
+    </p>
+  </div>
 
-            <br />
+  {/* Cards */}
+  <div className="grid md:grid-cols-2 gap-8">
 
-            <span className="text-2xl font-semibold mb-4">
-              Who Uses Growth Pilot
-            </span>
+    {/* LEFT CARD */}
+    <div className="bg-white/40 dark:bg-white/5 backdrop-blur-xl p-8 rounded-2xl border border-white/20 shadow-sm hover:shadow-[0_0_40px_rgba(99,102,241,0.3)] transition-all duration-500">
+      
+      {/* Icon */}
+      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-red-100 text-red-500 text-xl mb-4">
+        📩
+      </div>
 
-            <br />
+      <h3 className="text-xl font-semibold mb-4">
+        Data Privacy & Email Usage
+      </h3>
 
-            <p className="opacity-70">
-              Growth Pilot is designed for anyone looking to expand their digital
-              reach and improve their brand visibility.
-            </p>
-          </div>
+      <p className="opacity-70 mb-4">
+        We collect your email and basic usage data to improve performance and experience.
+      </p>
 
-          <div className="flex-1">
-            <img src={assets.about_img3} className="rounded-xl w-full hover:scale-105 transition duration-500" alt="" />
-          </div>
-        </motion.div>
+      <p className="opacity-70 mb-4">
+        Your email helps with account access and important updates.
+      </p>
+
+      <p className="opacity-70">
+        You can unsubscribe from marketing emails anytime.
+      </p>
+    </div>
+
+    {/* RIGHT CARD */}
+    <div className="bg-white/40 dark:bg-white/5 backdrop-blur-xl p-8 rounded-2xl border border-white/20 shadow-sm hover:shadow-[0_0_40px_rgba(244,63,94,0.3)] transition-all duration-500">
+      
+      {/* Icon */}
+      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-red-100 text-red-500 text-xl mb-4">
+        🔒
+      </div>
+
+      <h3 className="text-xl font-semibold mb-4">
+        Account Safety & Platform Compliance
+      </h3>
+
+      <p className="opacity-70 mb-4">
+        We keep your account safe and never access private messages or data.
+      </p>
+
+      <p className="text-red-400 text-sm bg-red-100/30 p-3 rounded-lg">
+        Growth Pilot does not affiliate with Instagram or Meta Platforms.
+      </p>
+    </div>
+
+  </div>
+</motion.div>
 
         <Team />
 

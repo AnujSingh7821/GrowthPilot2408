@@ -51,7 +51,7 @@ const Hero = () => {
         viewport={{ once: false }}
         className="relative"
       >
-        <img src={assets.heroimg2} alt="" className="w-full rounded-2xl max-w-6xl" />
+        <img src={assets.heroimg3} alt="" className="w-full rounded-2xl max-w-6xl" />
     
       </motion.div>
     </div>
