@@ -1,3 +1,5 @@
+import assets from "../../assets/assets";
+
 const services = {
   "web-development": {
     title: "Web Development",
@@ -25,20 +27,20 @@ const services = {
     ]
   },
 
-  // 🔥 UPDATED FULL SOCIAL MEDIA SERVICE
+  // 🔥 UPDATED SOCIAL MEDIA SERVICE (AS PER YOUR DESIGN)
   "social-media": {
     title: "Social Media Growth",
-    subtitle: "Real engagement & followers from real accounts",
+    subtitle: "All 100% real engagement from real accounts",
     description:
-      "We help you grow your social media with real engagement, high-quality followers, and powerful growth strategies.",
+      "We provide consistent growth with real engagement including likes, comments, reposts and high video views. (20 posts per month)",
 
-    image: "/images/social.jpg",
+    image: assets.social,
 
     features: [
-      "Real Likes, Comments & Shares",
+      "Real Likes & Comments",
       "High Video Views",
-      "USA Targeted Followers",
-      "Monthly Growth Plans"
+      "Reposts Included",
+      "Monthly Growth (20 Posts)"
     ],
 
     // 🔥 Engagement Packages
@@ -49,7 +51,7 @@ const services = {
         details: [
           "500 Real Likes",
           "30 Real Comments",
-          "100 Real Saves",
+          "10 Repost",
           "2,000 Video Views"
         ]
       },
@@ -59,7 +61,7 @@ const services = {
         details: [
           "1,000 Real Likes",
           "50 Real Comments",
-          "150 Real Saves",
+          "15 Repost",
           "4,000 Video Views"
         ]
       },
@@ -69,7 +71,7 @@ const services = {
         details: [
           "1,500 Real Likes",
           "50 Real Comments",
-          "250 Shares",
+          "20 Repost",
           "10,000 Video Views"
         ]
       },
@@ -79,7 +81,7 @@ const services = {
         details: [
           "3,000 Real Likes",
           "60 Real Comments",
-          "500 Real Shares",
+          "50 Repost",
           "20,000 Video Views"
         ]
       },
@@ -89,19 +91,25 @@ const services = {
         details: [
           "10,000 Real Likes",
           "60 Real Comments",
-          "500+ Saves",
+          "100+ Repost",
           "100,000+ Video Views"
         ]
       }
     ],
 
-    // 🔥 Followers Packages
+    // 🔥 Followers Packages (USA + INTERNATIONAL)
     followers: [
-      { name: "1,000 HQ USA Followers", price: "$89" },
-      { name: "2,000 HQ USA Followers", price: "$179" },
-      { name: "5,000 HQ USA Followers", price: "$449" },
-      { name: "10,000 HQ USA Followers", price: "$799" },
-      { name: "20,000 HQ USA Followers", price: "$1,499" }
+      { name: "1,000 USA Followers", price: "$89" },
+      { name: "2,000 USA Followers", price: "$179" },
+      { name: "5,000 USA Followers", price: "$449" },
+      { name: "10,000 USA Followers", price: "$799" },
+      { name: "20,000 USA Followers", price: "$1,499" },
+
+      { name: "10,000 International Followers", price: "$299" },
+      { name: "20,000 International Followers", price: "$549" },
+      { name: "50,000 International Followers", price: "$999" },
+      { name: "100,000 International Followers", price: "$1,799" },
+      { name: "200,000 International Followers", price: "$2,999" }
     ]
   },
 
