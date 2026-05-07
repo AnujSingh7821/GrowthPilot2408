@@ -30,9 +30,11 @@ const ServiceDetails = () => {
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">
             {service.title}
           </h1>
+
           <p className="text-lg opacity-70 mb-6">
             {service.subtitle}
           </p>
+
           <p className="mb-6">{service.description}</p>
 
           <button
@@ -62,7 +64,17 @@ const ServiceDetails = () => {
           {service.features.map((item, index) => (
             <div
               key={index}
-              className="p-5 border rounded-xl hover:shadow-lg transition"
+              className="
+                p-5 rounded-2xl
+                bg-white/10 backdrop-blur-lg
+                border border-white/20
+                shadow-lg
+
+                transition-all duration-300
+                hover:scale-105
+                hover:shadow-2xl
+                hover:bg-white/20
+              "
             >
               {item}
             </div>
@@ -70,28 +82,38 @@ const ServiceDetails = () => {
         </div>
       </div>
 
-      {/* 🔥 PACKAGES (only if exist) */}
+      {/* 🔥 PACKAGES */}
       {service.packages && (
         <div className="mt-20">
           <h2 className="text-2xl font-semibold mb-6">
-            Packages
+            Engagement Packages
           </h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {service.packages.map((pkg, index) => (
               <div
                 key={index}
-                className="p-6 border rounded-xl hover:shadow-lg transition"
+                className="
+                  p-6 rounded-2xl
+                  bg-white/10 backdrop-blur-lg
+                  border border-white/20
+                  shadow-lg
+
+                  transition-all duration-300
+                  hover:scale-105
+                  hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]
+                  hover:bg-white/20
+                "
               >
                 <h3 className="text-lg font-semibold mb-2">
                   {pkg.name}
                 </h3>
 
-                <p className="text-primary font-bold mb-3">
+                <p className="text-primary font-bold mb-3 text-xl">
                   {pkg.price}
                 </p>
 
-                <ul className="text-sm opacity-70 space-y-1">
+                <ul className="text-sm opacity-80 space-y-2">
                   {pkg.details.map((item, i) => (
                     <li key={i}>• {item}</li>
                   ))}
@@ -102,24 +124,70 @@ const ServiceDetails = () => {
         </div>
       )}
 
-      {/* 🔥 FOLLOWERS (only if exist) */}
-      {service.followers && (
+      {/* 🔥 USA FOLLOWERS */}
+      {service.usaFollowers && (
         <div className="mt-20">
           <h2 className="text-2xl font-semibold mb-6">
             USA Followers Packages
           </h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {service.followers.map((item, index) => (
+            {service.usaFollowers.map((item, index) => (
               <div
                 key={index}
-                className="p-6 border rounded-xl hover:shadow-lg transition"
+                className="
+                  p-6 rounded-2xl
+                  bg-white/10 backdrop-blur-lg
+                  border border-white/20
+                  shadow-lg
+
+                  transition-all duration-300
+                  hover:scale-105
+                  hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]
+                  hover:bg-white/20
+                "
               >
                 <h3 className="text-lg font-semibold mb-2">
                   {item.name}
                 </h3>
 
-                <p className="text-primary font-bold">
+                <p className="text-primary font-bold text-xl">
+                  {item.price}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* 🔥 INTERNATIONAL FOLLOWERS */}
+      {service.internationalFollowers && (
+        <div className="mt-20">
+          <h2 className="text-2xl font-semibold mb-6">
+            International Followers Packages
+          </h2>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {service.internationalFollowers.map((item, index) => (
+              <div
+                key={index}
+                className="
+                  p-6 rounded-2xl
+                  bg-white/10 backdrop-blur-lg
+                  border border-white/20
+                  shadow-lg
+
+                  transition-all duration-300
+                  hover:scale-105
+                  hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]
+                  hover:bg-white/20
+                "
+              >
+                <h3 className="text-lg font-semibold mb-2">
+                  {item.name}
+                </h3>
+
+                <p className="text-primary font-bold text-xl">
                   {item.price}
                 </p>
               </div>
@@ -136,7 +204,11 @@ const ServiceDetails = () => {
 
         <button
           onClick={() => navigate("/contact")}
-          className="bg-primary text-white px-8 py-3 rounded-full hover:scale-105 transition"
+          className="
+            bg-primary text-white px-8 py-3 rounded-full
+            hover:scale-105 transition duration-300
+            hover:shadow-[0_0_20px_rgba(59,130,246,0.6)]
+          "
         >
           Contact Us
         </button>

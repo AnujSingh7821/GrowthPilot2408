@@ -4,7 +4,8 @@ const services = {
   "web-development": {
     title: "Web Development",
     subtitle: "Build scalable, high-performance websites",
-    description: "We create fast, modern, and conversion-focused websites tailored to your business.",
+    description:
+      "We create fast, modern, and conversion-focused websites tailored to your business.",
     image: "/images/web.jpg",
     features: [
       "Responsive Design",
@@ -17,7 +18,8 @@ const services = {
   "graphic-design": {
     title: "Graphic Designing",
     subtitle: "Designs that speak your brand",
-    description: "We craft visually stunning graphics that connect with your audience.",
+    description:
+      "We craft visually stunning graphics that connect with your audience.",
     image: "/images/graphic.jpg",
     features: [
       "Brand Identity",
@@ -27,7 +29,7 @@ const services = {
     ]
   },
 
-  // 🔥 UPDATED SOCIAL MEDIA SERVICE (AS PER YOUR DESIGN)
+  // 🔥 UPDATED SOCIAL MEDIA SERVICE
   "social-media": {
     title: "Social Media Growth",
     subtitle: "All 100% real engagement from real accounts",
@@ -97,14 +99,17 @@ const services = {
       }
     ],
 
-    // 🔥 Followers Packages (USA + INTERNATIONAL)
-    followers: [
+    // 🔥 USA Followers Section
+    usaFollowers: [
       { name: "1,000 USA Followers", price: "$89" },
       { name: "2,000 USA Followers", price: "$179" },
       { name: "5,000 USA Followers", price: "$449" },
       { name: "10,000 USA Followers", price: "$799" },
-      { name: "20,000 USA Followers", price: "$1,499" },
+      { name: "20,000 USA Followers", price: "$1,499" }
+    ],
 
+    // 🔥 International Followers Section
+    internationalFollowers: [
       { name: "10,000 International Followers", price: "$299" },
       { name: "20,000 International Followers", price: "$549" },
       { name: "50,000 International Followers", price: "$999" },
@@ -116,7 +121,8 @@ const services = {
   "advertising": {
     title: "Advertising",
     subtitle: "Turn clicks into customers",
-    description: "We create high-converting ad campaigns that drive real results.",
+    description:
+      "We create high-converting ad campaigns that drive real results.",
     image: "/images/ads.jpg",
     features: [
       "Paid Campaigns",
