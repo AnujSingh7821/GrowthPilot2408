@@ -17,6 +17,8 @@ import close_icon from './close_icon.svg'
 import social from './social.png'
 import social1 from './social.jpeg'
 import social2 from './social2.PNG'
+import social3 from './social3.png'
+
 
 
 
@@ -116,6 +118,7 @@ const assets = {
   social,
   social1,
   social2,
+  social3,
   work_dashboard_management,
   email_icon,
   person_icon,

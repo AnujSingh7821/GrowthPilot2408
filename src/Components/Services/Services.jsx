@@ -13,7 +13,7 @@ const Services = () => {
 
     const servicesData =[
         {
-            title : "Social Media Marketing",
+            title : "Social Media Growth",
             description : " we help you to build a strong social media presence and engage with your audience",
             icon : assets.social_icon,
             path: "/social-media"

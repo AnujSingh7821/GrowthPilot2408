@@ -91,23 +91,56 @@ const ContactUs = () => {
         </div>
 
         {/* SERVICE DROPDOWN */}
-        <div className='sm:col-span-2'>
-          <p className='mb-2 text-sm font-medium'>Select Service</p>
+<div className='sm:col-span-2'>
+  <p className='mb-2 text-sm font-medium'>Select Service</p>
 
-          <div className='flex rounded-lg border border-gray-300 dark:border-gray-600'>
-            <select
-              name="service"
-              required
-              className='w-full p-3 text-sm outline-none bg-transparent'
-            >
-              <option value="">Select a Service</option>
-              <option value="Social Media Marketing">Social Media Marketing</option>
-              <option value="Graphic Designing">Graphic Designing</option>
-              <option value="Web Development">Web Development</option>
-              <option value="Advertising">Advertising</option>
-            </select>
-          </div>
-        </div>
+  <div className='flex rounded-lg border border-gray-300 dark:border-gray-600'>
+    
+    <select
+      name="service"
+      required
+      className='w-full p-3 text-sm outline-none bg-transparent dark:bg-gray-900 dark:text-white text-gray-700 rounded-lg'
+    >
+
+      <option 
+        value="" 
+        className='bg-white dark:bg-gray-900 text-gray-700 dark:text-white'
+      >
+        Select a Service
+      </option>
+
+      <option 
+        value="Social Media Marketing" 
+        className='bg-white dark:bg-gray-900 text-gray-700 dark:text-white'
+      >
+        Social Media Growth
+      </option>
+
+      <option 
+        value="Graphic Designing" 
+        className='bg-white dark:bg-gray-900 text-gray-700 dark:text-white'
+      >
+        Graphic Designing
+      </option>
+
+      <option 
+        value="Web Development" 
+        className='bg-white dark:bg-gray-900 text-gray-700 dark:text-white'
+      >
+        Web Development
+      </option>
+
+      <option 
+        value="Advertising" 
+        className='bg-white dark:bg-gray-900 text-gray-700 dark:text-white'
+      >
+        Advertising
+      </option>
+
+    </select>
+
+  </div>
+</div>
 
         {/* MESSAGE */}
         <div className='sm:col-span-2'>

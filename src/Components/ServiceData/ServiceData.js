@@ -36,7 +36,7 @@ const services = {
     description:
       "We provide consistent growth with real engagement including likes, comments, reposts and high video views. (20 posts per month)",
 
-    image: assets.social2,
+    image: assets.social3,
 
     features: [
       "Real Likes & Comments",

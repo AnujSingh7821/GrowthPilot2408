@@ -2,6 +2,7 @@
 import React from 'react';
 import assets from '../../assets/assets';
 import { motion } from "motion/react";
+import { MapPin } from "lucide-react";
 
 const Footer = ({theme}) => {
 
@@ -11,7 +12,7 @@ const Footer = ({theme}) => {
       whileInView={{opacity:1,y:0}}
       transition={{duration:0.8}}
       viewport={{once:false}}
-      className='bg-slate-50 dark:bg-gray-900  pt-10 sm:pt-10 px-4 sm:px-10 lg:px-24 xl:px-40'
+      className='bg-slate-50 dark:bg-gray-900 pt-10 sm:pt-10 px-4 sm:px-10 lg:px-24 xl:px-40'
     >
 
       {/* footer top */}
@@ -35,12 +36,22 @@ const Footer = ({theme}) => {
             From strategy to execution, We craft digital solution that move your business forward.
           </p>
 
-          <ul className='flex gap-8'>
+          <ul className='flex gap-8 flex-wrap'>
             <li><a className='hover:text-primary' href="#">Home</a></li>
-            <li><a className='hover:text-primary' href="#process">Process</a></li>
+            <li><a className='hover:text-primary' href="#process">Services</a></li>
             <li><a className='hover:text-primary' href="#our-work">Our Work</a></li>
             <li><a className='hover:text-primary' href="#contact-us">Contact US</a></li>
           </ul>
+
+          {/* ADDRESS */}
+          <div className='flex items-start gap-3 mt-5 text-sm max-w-md'>
+              <MapPin className='w-5 h-5 mt-0.5 text-primary shrink-0' />
+              
+              <p className='leading-6'>
+                109-C, Golyawas, Ksheer Sagar, Mansarovar, Jaipur, Raj 302020
+              </p>
+            </div>
+
         </motion.div>
 
         {/* RIGHT - WHATSAPP JOIN */}
@@ -49,7 +60,7 @@ const Footer = ({theme}) => {
           whileInView={{opacity:1,x:0}}
           transition={{duration:0.6,delay:0.3}}
           viewport={{once:false}}
-          className='text-gray-600 dark:text-gray-400'
+          className='text-gray-600 dark:text-gray-400 lg:mt-12 md:-mt-10'
         >
           <h3 className='font-semibold'>Join Our Community</h3>
 
@@ -100,10 +111,39 @@ const Footer = ({theme}) => {
         <p>Copyright 2026 © Growth_Pilot ALL Right Reserved.</p>
 
         <div className='flex items-center justify-between gap-4'>
-          <img src={assets.facebook_icon} alt="" />
-          <img src={assets.twitter_icon} alt="" />
-          <img src={assets.instagram_icon} alt="" />
-          <img src={assets.linkedin_icon} alt="" />
+
+          <a 
+            href="https://www.facebook.com/share/1B9CezTiZr/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={assets.facebook_icon} alt="facebook" />
+          </a>
+
+          <a 
+            href="https://x.com/growth_pilot"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={assets.twitter_icon} alt="twitter" />
+          </a>
+
+          <a 
+            href="https://www.instagram.com/growthpilot_official?igsh=MTc3bHZiN2ppbWlybg=="
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={assets.instagram_icon} alt="instagram" />
+          </a>
+
+          <a 
+            href="https://www.linkedin.com/in/growth-pilot-3aa6b23b8?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={assets.linkedin_icon} alt="linkedin" />
+          </a>
+
         </div>
       </motion.div>
 
