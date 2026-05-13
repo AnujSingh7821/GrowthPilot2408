@@ -47,7 +47,7 @@ const Footer = ({theme}) => {
           <div className='flex items-start gap-3 mt-5 text-sm max-w-md'>
               <MapPin className='w-5 h-5 mt-0.5 text-primary shrink-0' />
               
-              <p className='leading-6'>
+              <p className='leading-6 md:flex-col'>
                 109-C, Golyawas, Ksheer Sagar, Mansarovar, Jaipur, Raj 302020
               </p>
             </div>

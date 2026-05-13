@@ -14,6 +14,7 @@ import social_icon from './social_icon.svg'
 import menu_icon from './menu_icon.svg'
 import close_icon from './close_icon.svg'
 
+
 import social from './social.png'
 import social1 from './social.jpeg'
 import social2 from './social2.PNG'

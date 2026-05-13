@@ -9,12 +9,15 @@ import ContactUs from "./Components/ContactUs/ContactUs";
 import { Toaster } from "react-hot-toast";
 import Footer from "./Components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
-import ServiceDetails from "./Components/ServiceDetails/ServiceDetails"
+import ServiceDetails from "./Components/ServiceDetails/ServiceDetails";
 import About from "./Components/About/About";
+import SEO from "./Components/SEO/SEO";
 
 function App() {
   const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light",
+    localStorage.getItem("theme")
+      ? localStorage.getItem("theme")
+      : "light"
   );
 
   const dotRef = useRef(null);
@@ -32,11 +35,15 @@ function App() {
     document.addEventListener("mousemove", handleMouseMove);
 
     const animate = () => {
-      position.current.x += (mouse.current.x - position.current.x) * 0.1;
-      position.current.y += (mouse.current.y - position.current.y) * 0.1;
+      position.current.x +=
+        (mouse.current.x - position.current.x) * 0.1;
+
+      position.current.y +=
+        (mouse.current.y - position.current.y) * 0.1;
 
       if (dotRef.current && outlineRef.current) {
         dotRef.current.style.transform = `translate3d(${mouse.current.x - 6}px, ${mouse.current.y - 6}px, 0)`;
+
         outlineRef.current.style.transform = `translate3d(${position.current.x - 20}px, ${position.current.y - 20}px, 0)`;
       }
 
@@ -46,13 +53,26 @@ function App() {
     animate();
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener(
+        "mousemove",
+        handleMouseMove
+      );
     };
   }, []);
 
   return (
     <div className="dark:bg-black relative">
+      {/* GLOBAL SEO */}
+      <SEO
+        title="Growth Pilot"
+        description="Modern web development, branding, UI/UX design and digital solutions."
+        keywords="web development, react developer, ui ux design, branding agency, website development"
+        image="https://growthpilotdigital.com/pre.jpeg"
+        url="https://growthpilotdigital.com/"
+      />
+
       <Toaster />
+
       <Navbar theme={theme} setTheme={setTheme} />
 
       {/* ROUTES */}
@@ -72,13 +92,19 @@ function App() {
         />
 
         <Route path="/services" element={<Services />} />
+
         <Route path="/work" element={<OurWork />} />
+
         <Route path="/team" element={<Team />} />
+
         <Route path="/contact" element={<ContactUs />} />
+
         <Route path="/about" element={<About />} />
 
-
-        <Route path="/:serviceId" element={<ServiceDetails />} />
+        <Route
+          path="/:serviceId"
+          element={<ServiceDetails />}
+        />
       </Routes>
 
       <Footer theme={theme} />
