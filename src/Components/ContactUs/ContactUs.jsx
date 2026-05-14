@@ -42,8 +42,7 @@ const ContactUs = () => {
       transition={{ straggerchildren:0.2 }}
       viewport={{ once: false }} 
       id='contact-us'
-      className='flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-gray-700 dark:text-white'
-      
+      className='flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 pb-24 text-gray-700 dark:text-white'
     >
 
       <Title 
@@ -91,56 +90,56 @@ const ContactUs = () => {
         </div>
 
         {/* SERVICE DROPDOWN */}
-<div className='sm:col-span-2'>
-  <p className='mb-2 text-sm font-medium'>Select Service</p>
+        <div className='sm:col-span-2'>
+          <p className='mb-2 text-sm font-medium'>Select Service</p>
 
-  <div className='flex rounded-lg border border-gray-300 dark:border-gray-600'>
-    
-    <select
-      name="service"
-      required
-      className='w-full p-3 text-sm outline-none bg-transparent dark:bg-gray-900 dark:text-white text-gray-700 rounded-lg'
-    >
+          <div className='flex rounded-lg border border-gray-300 dark:border-gray-600'>
+            
+            <select
+              name="service"
+              required
+              className='w-full p-3 text-sm outline-none bg-transparent dark:bg-gray-900 dark:text-white text-gray-700 rounded-lg'
+            >
 
-      <option 
-        value="" 
-        className='bg-white dark:bg-gray-900 text-gray-700 dark:text-white'
-      >
-        Select a Service
-      </option>
+              <option 
+                value="" 
+                className='bg-white dark:bg-gray-900 text-gray-700 dark:text-white'
+              >
+                Select a Service
+              </option>
 
-      <option 
-        value="Social Media Marketing" 
-        className='bg-white dark:bg-gray-900 text-gray-700 dark:text-white'
-      >
-        Social Media Growth
-      </option>
+              <option 
+                value="Social Media Marketing" 
+                className='bg-white dark:bg-gray-900 text-gray-700 dark:text-white'
+              >
+                Social Media Growth
+              </option>
 
-      <option 
-        value="Graphic Designing" 
-        className='bg-white dark:bg-gray-900 text-gray-700 dark:text-white'
-      >
-        Graphic Designing
-      </option>
+              <option 
+                value="Graphic Designing" 
+                className='bg-white dark:bg-gray-900 text-gray-700 dark:text-white'
+              >
+                Graphic Designing
+              </option>
 
-      <option 
-        value="Web Development" 
-        className='bg-white dark:bg-gray-900 text-gray-700 dark:text-white'
-      >
-        Web Development
-      </option>
+              <option 
+                value="Web Development" 
+                className='bg-white dark:bg-gray-900 text-gray-700 dark:text-white'
+              >
+                Web Development
+              </option>
 
-      <option 
-        value="Advertising" 
-        className='bg-white dark:bg-gray-900 text-gray-700 dark:text-white'
-      >
-        Advertising
-      </option>
+              <option 
+                value="Advertising" 
+                className='bg-white dark:bg-gray-900 text-gray-700 dark:text-white'
+              >
+                Advertising
+              </option>
 
-    </select>
+            </select>
 
-  </div>
-</div>
+          </div>
+        </div>
 
         {/* MESSAGE */}
         <div className='sm:col-span-2'>
