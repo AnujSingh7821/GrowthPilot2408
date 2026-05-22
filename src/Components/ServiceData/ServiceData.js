@@ -31,12 +31,11 @@ const services = {
 
   // 🔥 UPDATED SOCIAL MEDIA SERVICE
   "social-media": {
-    title: "Social Media Growth",
-    subtitle: "All 100% real engagement from real accounts",
-    description:
-      "We provide consistent growth with real engagement including likes, comments, reposts and high video views. (20 posts per month)",
+  title: "Social Media Growth",
+  subtitle: "Grow faster on social media with real interactions, higher reach, and powerful engagement strategies.",
+  description: "",
 
-    image: assets.social3,
+  image: assets.social3,
 
     features: [
       "Real Likes & Comments",

@@ -4,10 +4,36 @@ import { motion } from "motion/react";
 import assets from "../../assets/assets";
 import Team from "../Team/Team";
 
+const GlassSection = ({ children, className = "" }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false }}
+      transition={{ duration: 0.6 }}
+      className={`
+        relative overflow-hidden
+        rounded-[30px]
+        border border-white/20
+        bg-white/45 dark:bg-white/5
+        backdrop-blur-2xl
+        shadow-[0_0_45px_rgba(99,102,241,0.15)]
+        p-6 sm:p-8 lg:p-10
+        transition-all duration-500
+        hover:shadow-[0_0_55px_rgba(99,102,241,0.35)]
+        ${className}
+      `}
+    >
+      <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-transparent to-blue-500/10 pointer-events-none" />
+      <div className="relative z-10">{children}</div>
+    </motion.div>
+  );
+};
+
 const About = () => {
   return (
     <div
-      className="relative overflow-hidden px-4 sm:px-12 lg:px-24 xl:px-40 py-20 text-gray-700 dark:text-white flex flex-col gap-20"
+      className="relative overflow-hidden px-4 sm:px-12 lg:px-24 xl:px-40 py-20 text-gray-700 dark:text-white"
       style={{
         backgroundImage: `url(${assets.bgimg4})`,
         backgroundSize: "cover",
@@ -16,157 +42,172 @@ const About = () => {
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-white/70 dark:bg-black/60 backdrop-blur"></div>
+      <div className="absolute inset-0 bg-white/75 dark:bg-black/70 backdrop-blur-sm"></div>
 
-      {/* Content Wrapper */}
       <div className="relative z-10 flex flex-col gap-20">
-
+        
         {/* HERO SECTION */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="text-center max-w-3xl mx-auto"
-        >
-          <p className="inline-block px-4 py-1 bg-primary/10 text-[#0c44ee] rounded-full text-sm mb-4">
-            Welcome to 𝗚𝗿𝗼𝘄𝘁𝗵 𝗣𝗶𝗹𝗼𝘁
-          </p>
+        <GlassSection className="max-w-5xl mx-auto text-center py-14 sm:py-20">
 
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-            𝗔𝗯𝗼𝘂𝘁 <span className="text-[#211bc6]">𝗚𝗿𝗼𝘄𝘁𝗵𝗣𝗶𝗹𝗼𝘁</span>
+          <div className="flex justify-center mb-6">
+            <div className="px-5 py-2 rounded-full border border-primary/20 bg-white/20 dark:bg-white/5 backdrop-blur-xl">
+              <p className="text-sm sm:text-base text-[#3559ff] font-medium tracking-wide">
+                Welcome to 𝗚𝗿𝗼𝘄𝘁𝗵 𝗣𝗶𝗹𝗼𝘁
+              </p>
+            </div>
+          </div>
+
+          <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-6">
+            𝗔𝗯𝗼𝘂𝘁{" "}
+            <span className="bg-linear-to-r from-[#3559ff] to-[#7c3aed] bg-clip-text text-transparent">
+              𝗚𝗿𝗼𝘄𝘁𝗵𝗣𝗶𝗹𝗼𝘁
+            </span>
           </h1>
 
-          <p className="opacity-70">
-            We help you grow your Instagram in a smart and safe way.
+          <p className="max-w-2xl mx-auto text-base sm:text-lg opacity-75 leading-8">
+            We help creators, brands, and businesses grow their Instagram
+            presence with smart strategies, authentic engagement, and safe
+            long-term growth.
           </p>
-        </motion.div>
+
+        </GlassSection>
 
         {/* OUR APPROACH */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="flex flex-col lg:flex-row items-center gap-10 bg-white/40 dark:bg-white/5 backdrop-blur-xl p-8 rounded-2xl shadow-sm border border-white/20 hover:shadow-[0_0_40px_rgba(99,102,241,0.3)] transition-all duration-500"
-        >
-          <div className="flex-1">
-            <h2 className="text-2xl font-semibold mb-4">
-              Our Approach to Growth
-            </h2>
+        <GlassSection>
+          <div className="flex flex-col lg:flex-row items-center gap-10">
+            <div className="flex-1">
+              <p className="text-sm text-primary font-semibold mb-3">
+                Our Strategy
+              </p>
 
-            <p className="opacity-70 mb-4 text-xl font-semibold">
-              At Growth Pilot, we believe in authentic and sustainable growth
-              strategies.
-            </p>
+              <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
+                Our Approach to Growth
+              </h2>
 
-            <p className="opacity-70">
-              Every account grows differently based on content, consistency, and
-              engagement.
-            </p>
+              <p className="opacity-70 mb-4 text-xl font-semibold">
+                At Growth Pilot, we believe in authentic and sustainable growth
+                strategies.
+              </p>
+
+              <p className="opacity-70">
+                Every account grows differently based on content, consistency,
+                and engagement.
+              </p>
+            </div>
+
+            <div className="flex-1">
+              <img
+                src={assets.about_img2}
+                className="rounded-2xl w-full shadow-xl hover:scale-105 transition duration-500"
+                alt=""
+              />
+            </div>
           </div>
-
-          <div className="flex-1">
-            <img src={assets.about_img2} className="rounded-xl w-full hover:scale-105 transition duration-500" alt="" />
-          </div>
-        </motion.div>
+        </GlassSection>
 
         {/* WHO WE ARE */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="flex flex-col lg:flex-row items-center gap-10"
-        >
-          <div className="flex-1">
-            <img src={assets.about_img1} className="rounded-xl w-full hover:scale-105 transition duration-500" alt="" />
+        <GlassSection>
+          <div className="flex flex-col lg:flex-row items-center gap-10">
+            <div className="flex-1">
+              <img
+                src={assets.about_img1}
+                className="rounded-2xl w-full shadow-xl hover:scale-105 transition duration-500"
+                alt=""
+              />
+            </div>
+
+            <div className="flex-1">
+              <p className="text-sm text-primary font-semibold mb-3">
+                About Us
+              </p>
+
+              <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
+                Who We Are
+              </h2>
+
+              <p className="opacity-70 mb-4">
+                We are a digital growth platform helping creators, businesses,
+                and marketers grow their audience.
+              </p>
+
+              <p className="opacity-70">
+                Our goal is to provide transparency and scalable growth.
+              </p>
+            </div>
           </div>
+        </GlassSection>
 
-          <div className="flex-1">
-            <h2 className="text-2xl font-semibold mb-4">Who We Are</h2>
+        {/* TRANSPARENCY */}
+        <GlassSection>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="flex justify-center mb-4">
+              <div className="w-12 h-12 flex items-center justify-center rounded-full bg-green-100 text-green-600 text-2xl shadow-lg">
+                ✓
+              </div>
+            </div>
 
-            <p className="opacity-70 mb-4">
-              We are a digital growth platform helping creators, businesses, and
-              marketers grow their audience.
-            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Transparency & User Safety
+            </h2>
 
             <p className="opacity-70">
-              Our goal is to provide transparency and scalable growth.
+              We aim to be transparent in all aspects and keep users safe while
+              using our platform.
             </p>
           </div>
-        </motion.div>
 
-        {/* NEW SECTION (Transparency & Safety) */}
-        <motion.div
-  initial={{ opacity: 0, y: 40 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  className="flex flex-col gap-12"
->
-  {/* Heading */}
-  <div className="text-center max-w-3xl mx-auto">
-    <div className="flex justify-center mb-4">
-      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-green-100 text-green-600 text-2xl">
-        ✓
-      </div>
-    </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* LEFT CARD */}
+            <div className="bg-white/40 dark:bg-white/5 backdrop-blur-xl p-8 rounded-2xl border border-white/20 shadow-sm hover:shadow-[0_0_40px_rgba(99,102,241,0.3)] transition-all duration-500">
+              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-red-100 text-red-500 text-xl mb-4">
+                📩
+              </div>
 
-    <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-      Transparency & User Safety
-    </h2>
+              <h3 className="text-xl font-semibold mb-4">
+                Data Privacy & Email Usage
+              </h3>
 
-    <p className="opacity-70">
-      We aim to be transparent in all aspects and keep users safe while using our platform.
-    </p>
-  </div>
+              <p className="opacity-70 mb-4">
+                We collect your email and basic usage data to improve
+                performance and experience.
+              </p>
 
-  {/* Cards */}
-  <div className="grid md:grid-cols-2 gap-8">
+              <p className="opacity-70 mb-4">
+                Your email helps with account access and important updates.
+              </p>
 
-    {/* LEFT CARD */}
-    <div className="bg-white/40 dark:bg-white/5 backdrop-blur-xl p-8 rounded-2xl border border-white/20 shadow-sm hover:shadow-[0_0_40px_rgba(99,102,241,0.3)] transition-all duration-500">
-      
-      {/* Icon */}
-      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-red-100 text-red-500 text-xl mb-4">
-        📩
-      </div>
+              <p className="opacity-70">
+                You can unsubscribe from marketing emails anytime.
+              </p>
+            </div>
 
-      <h3 className="text-xl font-semibold mb-4">
-        Data Privacy & Email Usage
-      </h3>
+            {/* RIGHT CARD */}
+            <div className="bg-white/40 dark:bg-white/5 backdrop-blur-xl p-8 rounded-2xl border border-white/20 shadow-sm hover:shadow-[0_0_40px_rgba(244,63,94,0.3)] transition-all duration-500">
+              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-red-100 text-red-500 text-xl mb-4">
+                🔒
+              </div>
 
-      <p className="opacity-70 mb-4">
-        We collect your email and basic usage data to improve performance and experience.
-      </p>
+              <h3 className="text-xl font-semibold mb-4">
+                Account Safety & Platform Compliance
+              </h3>
 
-      <p className="opacity-70 mb-4">
-        Your email helps with account access and important updates.
-      </p>
+              <p className="opacity-70 mb-4">
+                We keep your account safe and never access private messages or
+                data.
+              </p>
 
-      <p className="opacity-70">
-        You can unsubscribe from marketing emails anytime.
-      </p>
-    </div>
+              <p className="dark:text-white text-sm bg-red-100/30 p-3 rounded-lg border border-red-200/30">
+                Growth Pilot does not affiliate with Instagram or Meta
+                Platforms.
+              </p>
+            </div>
+          </div>
+        </GlassSection>
 
-    {/* RIGHT CARD */}
-    <div className="bg-white/40 dark:bg-white/5 backdrop-blur-xl p-8 rounded-2xl border border-white/20 shadow-sm hover:shadow-[0_0_40px_rgba(244,63,94,0.3)] transition-all duration-500">
-      
-      {/* Icon */}
-      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-red-100 text-red-500 text-xl mb-4">
-        🔒
-      </div>
-
-      <h3 className="text-xl font-semibold mb-4">
-        Account Safety & Platform Compliance
-      </h3>
-
-      <p className="opacity-70 mb-4">
-        We keep your account safe and never access private messages or data.
-      </p>
-
-      <p className="text-red-400 text-sm bg-red-100/30 p-3 rounded-lg">
-        Growth Pilot does not affiliate with Instagram or Meta Platforms.
-      </p>
-    </div>
-
-  </div>
-</motion.div>
-
-        <Team />
+        {/* TEAM */}
+        <GlassSection>
+          <Team />
+        </GlassSection>
 
       </div>
     </div>

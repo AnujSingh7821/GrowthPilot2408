@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import Hero from "./Components/Hero/Hero";
 import TrustedBy from "./Components/Trustedby/TrustedBy";
@@ -59,6 +60,16 @@ function App() {
       );
     };
   }, []);
+
+
+  const location = useLocation();
+
+useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}, [location.pathname]);
 
   return (
     <div className="dark:bg-black relative">

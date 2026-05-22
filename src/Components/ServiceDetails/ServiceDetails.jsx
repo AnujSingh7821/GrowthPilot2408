@@ -4,6 +4,31 @@ import { useParams, useNavigate } from "react-router-dom";
 import services from "../ServiceData/ServiceData";
 import { motion } from "motion/react";
 
+const SectionWrapper = ({ title, children }) => {
+  return (
+    <div
+      className="
+        mt-20 p-6 sm:p-8 rounded-[28px]
+        bg-white/5 dark:bg-white/5
+        border border-white/15
+        backdrop-blur-2xl
+        shadow-[0_0_40px_rgba(79,70,229,0.12)]
+        relative overflow-hidden
+      "
+    >
+      <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-transparent to-blue-500/10 pointer-events-none" />
+
+      <div className="relative z-10">
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-6">
+          {title}
+        </h2>
+
+        {children}
+      </div>
+    </div>
+  );
+};
+
 const ServiceDetails = () => {
   const { serviceId } = useParams();
   const navigate = useNavigate();
@@ -11,15 +36,10 @@ const ServiceDetails = () => {
   const service = services[serviceId];
 
   if (!service)
-    return (
-      <h1 className="text-gray-700 dark:text-white">
-        Service Not Found
-      </h1>
-    );
+    return <h1 className="text-gray-700 dark:text-white">Service Not Found</h1>;
 
   return (
     <div className="px-4 sm:px-12 lg:px-24 xl:px-40 py-20 text-gray-700 dark:text-white">
-
       {/* HERO SECTION */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -31,11 +51,11 @@ const ServiceDetails = () => {
             {service.title}
           </h1>
 
-          <p className="text-lg opacity-70 mb-6">
-            {service.subtitle}
-          </p>
+          <p className="text-lg opacity-70 mb-6">{service.subtitle}</p>
 
-          <p className="mb-6">{service.description}</p>
+          {service.description && (
+            <p className="mb-6">{service.description}</p>
+          )}
 
           <button
             onClick={() => navigate("/contact")}
@@ -46,48 +66,45 @@ const ServiceDetails = () => {
         </div>
 
         <div className="flex-1">
-          <img
-            src={service.image}
-            className="rounded-2xl w-full"
-            alt=""
-          />
+          <img src={service.image} className="rounded-2xl w-full" alt="" />
         </div>
       </motion.div>
 
       {/* FEATURES */}
-      <div className="mt-20">
-        <h2 className="text-2xl font-semibold mb-6">
-          What You Get
-        </h2>
-
+      <SectionWrapper title="What You Get">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {service.features.map((item, index) => (
             <div
               key={index}
               className="
                 p-5 rounded-2xl
-                bg-white/10 backdrop-blur-lg
-                border border-white/20
+                bg-white/10
+                border border-white/15
+                backdrop-blur-xl
                 shadow-lg
-
                 transition-all duration-300
                 hover:scale-105
-                hover:shadow-2xl
                 hover:bg-white/20
+                hover:shadow-[0_0_25px_rgba(79,70,229,0.35)]
               "
             >
               {item}
             </div>
           ))}
         </div>
-      </div>
+      </SectionWrapper>
 
-      {/* 🔥 PACKAGES */}
+      {/* PACKAGES */}
       {service.packages && (
-        <div className="mt-20">
-          <h2 className="text-2xl font-semibold mb-6">
-            Engagement Packages
-          </h2>
+        <SectionWrapper title="Engagement Packages">
+          <p className="text-lg opacity-70 mb-3">
+            All 100% real engagement from real accounts
+          </p>
+
+          <p className="mb-8 max-w-3xl opacity-90">
+            We provide consistent growth with real engagement including likes,
+            comments, reposts and high video views. (20 posts per month)
+          </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {service.packages.map((pkg, index) => (
@@ -95,19 +112,17 @@ const ServiceDetails = () => {
                 key={index}
                 className="
                   p-6 rounded-2xl
-                  bg-white/10 backdrop-blur-lg
-                  border border-white/20
+                  bg-white/10
+                  border border-white/15
+                  backdrop-blur-xl
                   shadow-lg
-
                   transition-all duration-300
                   hover:scale-105
-                  hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]
                   hover:bg-white/20
+                  hover:shadow-[0_0_25px_rgba(79,70,229,0.45)]
                 "
               >
-                <h3 className="text-lg font-semibold mb-2">
-                  {pkg.name}
-                </h3>
+                <h3 className="text-lg font-semibold mb-2">{pkg.name}</h3>
 
                 <p className="text-primary font-bold mb-3 text-xl">
                   {pkg.price}
@@ -121,79 +136,61 @@ const ServiceDetails = () => {
               </div>
             ))}
           </div>
-        </div>
+        </SectionWrapper>
       )}
 
-      {/* 🔥 USA FOLLOWERS */}
+      {/* USA FOLLOWERS */}
       {service.usaFollowers && (
-        <div className="mt-20">
-          <h2 className="text-2xl font-semibold mb-6">
-            USA Followers Packages
-          </h2>
-
+        <SectionWrapper title="USA Followers Packages">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {service.usaFollowers.map((item, index) => (
               <div
                 key={index}
                 className="
                   p-6 rounded-2xl
-                  bg-white/10 backdrop-blur-lg
-                  border border-white/20
+                  bg-white/10
+                  border border-white/15
+                  backdrop-blur-xl
                   shadow-lg
-
                   transition-all duration-300
                   hover:scale-105
-                  hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]
                   hover:bg-white/20
+                  hover:shadow-[0_0_25px_rgba(79,70,229,0.45)]
                 "
               >
-                <h3 className="text-lg font-semibold mb-2">
-                  {item.name}
-                </h3>
-
-                <p className="text-primary font-bold text-xl">
-                  {item.price}
-                </p>
+                <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
+                <p className="text-primary font-bold text-xl">{item.price}</p>
               </div>
             ))}
           </div>
-        </div>
+        </SectionWrapper>
       )}
 
-      {/* 🔥 INTERNATIONAL FOLLOWERS */}
+      {/* INTERNATIONAL FOLLOWERS */}
       {service.internationalFollowers && (
-        <div className="mt-20">
-          <h2 className="text-2xl font-semibold mb-6">
-            International Followers Packages
-          </h2>
-
+        <SectionWrapper title="International Followers Packages">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {service.internationalFollowers.map((item, index) => (
               <div
                 key={index}
                 className="
                   p-6 rounded-2xl
-                  bg-white/10 backdrop-blur-lg
-                  border border-white/20
+                  bg-white/10
+                  border border-white/15
+                  backdrop-blur-xl
                   shadow-lg
-
                   transition-all duration-300
                   hover:scale-105
-                  hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]
                   hover:bg-white/20
+                  hover:shadow-[0_0_25px_rgba(79,70,229,0.45)]
                 "
               >
-                <h3 className="text-lg font-semibold mb-2">
-                  {item.name}
-                </h3>
-
-                <p className="text-primary font-bold text-xl">
-                  {item.price}
-                </p>
+                <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
+                <p className="text-primary font-bold text-xl">{item.price}</p>
               </div>
             ))}
           </div>
-        </div>
+        </SectionWrapper>
       )}
 
       {/* CTA */}
