@@ -1,154 +1,406 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import assets from '../../assets/assets';
+
+import React from "react";
+import assets from "../../assets/assets";
 import { motion } from "motion/react";
-import { MapPin } from "lucide-react";
 
-const Footer = ({theme}) => {
-
+const Footer = ({ theme }) => {
   return (
-    <motion.div 
-      initial={{opacity:0,y:50}}
-      whileInView={{opacity:1,y:0}}
-      transition={{duration:0.8}}
-      viewport={{once:false}}
-      className='bg-slate-50 dark:bg-gray-900 pt-10 sm:pt-10 px-4 sm:px-10 lg:px-24 xl:px-40'
+    <motion.footer
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: false }}
+      className="
+        bg-slate-50
+        dark:bg-gray-900
+        px-4
+        sm:px-10
+        lg:px-24
+        xl:px-40
+        pt-12
+      "
     >
+      {/* ================= FOOTER TOP ================= */}
 
-      {/* footer top */}
-      <div className='flex justify-between lg:item-center max-lg:flex-col gap-10'>
-      
-        {/* LEFT */}
-        <motion.div 
-          initial={{opacity:0,x:-30}}
-          whileInView={{opacity:1,x:0}}
-          transition={{duration:0.6,delay:0.2}}
-          viewport={{once:false}}
-          className='space-y-5 text-sm text-gray-700 dark:text-gray-400'
+      <div
+        className="
+          grid
+          lg:grid-cols-2
+          gap-12
+          lg:gap-20
+          items-start
+        "
+      >
+        {/* LEFT SIDE */}
+
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: false }}
+          className="
+            flex
+            flex-col
+            items-start
+            text-gray-700
+            dark:text-gray-400
+          "
         >
-          <img 
-            src={theme === 'dark' ? assets.logoBlack1 : assets.logowhite1} 
-            className='w-32 sm:w-44' 
-            alt="" 
+          <img
+            src={
+              theme === "dark"
+                ? assets.logoBlack1
+                : assets.logowhite1
+            }
+            className="w-36 sm:w-44 mb-5"
+            alt="Growth Pilot"
           />
 
-          <p className='max-w-md'>
-            From strategy to execution, We craft digital solution that move your business forward.
+          <p className="max-w-md text-sm leading-6 mb-7">
+            From strategy to execution, we craft digital solutions that move
+            your business forward.
           </p>
 
-          <ul className='flex gap-8 flex-wrap'>
-            <li><a className='hover:text-primary' href="#">Home</a></li>
-            <li><a className='hover:text-primary' href="#process">Services</a></li>
-            <li><a className='hover:text-primary' href="#our-work">Our Work</a></li>
-            <li><a className='hover:text-primary' href="#contact-us">Contact US</a></li>
+          {/* NAV LINKS */}
+
+          <ul
+            className="
+              flex
+              flex-wrap
+              items-center
+              gap-x-7
+              gap-y-3
+              text-sm
+              font-medium
+            "
+          >
+            <li>
+              <a
+                href="/"
+                className="
+                  hover:text-primary
+                  transition-colors
+                  duration-300
+                "
+              >
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/services"
+                className="
+                  hover:text-primary
+                  transition-colors
+                  duration-300
+                "
+              >
+                Services
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/work"
+                className="
+                  hover:text-primary
+                  transition-colors
+                  duration-300
+                "
+              >
+                Our Work
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/about"
+                className="
+                  hover:text-primary
+                  transition-colors
+                  duration-300
+                "
+              >
+                About
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/contact"
+                className="
+                  hover:text-primary
+                  transition-colors
+                  duration-300
+                "
+              >
+                Contact Us
+              </a>
+            </li>
           </ul>
-
-          {/* ADDRESS */}
-          <div className='flex items-start gap-3 mt-5 text-sm max-w-md'>
-              <MapPin className='w-5 h-5 mt-0.5 text-primary shrink-0' />
-              
-              <p className='leading-6 md:flex-col'>
-                109-C, Golyawas, Ksheer Sagar, Mansarovar, Jaipur, Raj 302020
-              </p>
-            </div>
-
         </motion.div>
 
-        {/* RIGHT - WHATSAPP JOIN */}
-        <motion.div 
-          initial={{opacity:0,x:30}}
-          whileInView={{opacity:1,x:0}}
-          transition={{duration:0.6,delay:0.3}}
-          viewport={{once:false}}
-          className='text-gray-600 dark:text-gray-400 lg:mt-12 md:-mt-10'
-        >
-          <h3 className='font-semibold'>Join Our Community</h3>
+        {/* RIGHT SIDE - WHATSAPP */}
 
-          <p className='text-sm mt-2 mb-6'>
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: false }}
+          className="
+            w-full
+            lg:max-w-lg
+            lg:ml-auto
+            text-gray-600
+            dark:text-gray-400
+          "
+        >
+          <h3
+            className="
+              text-lg
+              font-semibold
+              text-gray-800
+              dark:text-white
+            "
+          >
+            Join Our Community
+          </h3>
+
+          <p className="text-sm mt-2 leading-6">
             Get updates, offers & connect with us directly on WhatsApp.
           </p>
 
-          <motion.div  
-            initial={{opacity:0,y:30}}
-            whileInView={{opacity:1,y:0}}
-            transition={{duration:0.5,delay:0.4}}
-            viewport={{once:false}}
-            className='w-full max-w-md mt-4'
+          {/* WHATSAPP BOX */}
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: false }}
+            className="mt-6"
           >
+            <div
+              className="
+                flex
+                sm:flex-row
+                flex-col
+                sm:items-center
+                sm:justify-between
+                gap-4
+                border
+                border-gray-200
+                dark:border-gray-700
+                rounded-2xl
+                bg-white
+                dark:bg-gray-800
+                p-4
+                shadow-sm
+                hover:shadow-md
+                transition-all
+                duration-300
+              "
+            >
+              <div className="flex items-center gap-3">
+                <div
+                  className="
+                    w-12
+                    h-12
+                    rounded-xl
+                    bg-green-50
+                    dark:bg-green-500/10
+                    flex
+                    items-center
+                    justify-center
+                    shrink-0
+                  "
+                >
+                  <img
+                    src={assets.whatsapp_icon1}
+                    alt="WhatsApp"
+                    className="w-8 h-8"
+                  />
+                </div>
 
-            <div className='flex items-center justify-between border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden bg-white dark:bg-gray-800 p-2'>
+                <div>
+                  <p
+                    className="
+                      text-sm
+                      font-semibold
+                      text-gray-800
+                      dark:text-white
+                    "
+                  >
+                    Growth Pilot Community
+                  </p>
 
-              <div className='flex items-center gap-2 px-2'>
-                <img src={assets.whatsapp_icon1} alt="" className='h-10 w-10' />
-                <p className='text-sm'>Join us on WhatsApp</p>
+                  <p className="text-xs mt-1 text-gray-500 dark:text-gray-400">
+                    Join us on WhatsApp
+                  </p>
+                </div>
               </div>
 
-              <a 
+              <a
                 href="https://wa.me/919664145546"
                 target="_blank"
                 rel="noopener noreferrer"
-                className='bg-primary text-white px-5 py-2 text-sm font-medium rounded-md hover:opacity-90 transition'
+                className="
+                  group
+                  relative
+                  overflow-hidden
+                  flex
+                  items-center
+                  justify-center
+                  bg-primary
+                  text-white
+                  px-6
+                  py-2.5
+                  rounded-full
+                  text-sm
+                  font-medium
+                  border
+                  border-primary
+                  transition-all
+                  duration-500
+                  whitespace-nowrap
+                "
               >
-                Join Now
+                <span
+                  className="
+                    relative
+                    z-10
+                    transition-colors
+                    duration-500
+                    group-hover:text-primary
+                  "
+                >
+                  Join Now
+                </span>
+
+                <span
+                  className="
+                    absolute
+                    inset-0
+                    bg-white
+                    -translate-x-full
+                    group-hover:translate-x-0
+                    transition-transform
+                    duration-500
+                    ease-out
+                  "
+                />
               </a>
-
             </div>
-
           </motion.div>
         </motion.div>
       </div>
 
-      <hr className='border-gray-300 dark:border-gray-600 my-6'/>
+      {/* DIVIDER */}
 
-      {/* footer bottom */}
+      <hr className="border-gray-200 dark:border-gray-700 mt-10 mb-6" />
+
+      {/* ================= FOOTER BOTTOM ================= */}
+
       <motion.div
-        initial={{opacity:0}}
-        whileInView={{opacity:1}}
-        transition={{duration:0.5,delay:0.4}}
-        viewport={{once:false}}
-        className='pb-6 text-sm text-gray-500 flex justify-center sm:justify-between gap-4 flex-wrap'
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        viewport={{ once: false }}
+        className="
+          pb-6
+          flex
+          flex-col
+          sm:flex-row
+          items-center
+          justify-between
+          gap-5
+          text-sm
+          text-gray-500
+        "
       >
-        <p>Copyright 2026 © Growth_Pilot ALL Right Reserved.</p>
+        <p className="text-center sm:text-left">
+          Copyright 2026 © Growth Pilot. All Rights Reserved.
+        </p>
 
-        <div className='flex items-center justify-between gap-4'>
+        {/* SOCIAL ICONS */}
 
-          <a 
+        <div className="flex items-center gap-4">
+          <a
             href="https://www.facebook.com/share/1B9CezTiZr/"
             target="_blank"
             rel="noopener noreferrer"
+            className="
+              hover:-translate-y-1
+              hover:opacity-80
+              transition-all
+              duration-300
+            "
           >
-            <img src={assets.facebook_icon} alt="facebook" />
+            <img
+              src={assets.facebook_icon}
+              alt="Facebook"
+              className="w-5 h-5"
+            />
           </a>
 
-          <a 
+          <a
             href="https://x.com/growth_pilot"
             target="_blank"
             rel="noopener noreferrer"
+            className="
+              hover:-translate-y-1
+              hover:opacity-80
+              transition-all
+              duration-300
+            "
           >
-            <img src={assets.twitter_icon} alt="twitter" />
+            <img
+              src={assets.twitter_icon}
+              alt="Twitter"
+              className="w-5 h-5"
+            />
           </a>
 
-          <a 
+          <a
             href="https://www.instagram.com/growthpilot_official?igsh=MTc3bHZiN2ppbWlybg=="
             target="_blank"
             rel="noopener noreferrer"
+            className="
+              hover:-translate-y-1
+              hover:opacity-80
+              transition-all
+              duration-300
+            "
           >
-            <img src={assets.instagram_icon} alt="instagram" />
+            <img
+              src={assets.instagram_icon}
+              alt="Instagram"
+              className="w-5 h-5"
+            />
           </a>
 
-          <a 
-            href="https://www.linkedin.com/in/growth-pilot-3aa6b23b8?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+          <a
+            href="https://www.linkedin.com/in/growth-pilot-3aa6b23b8"
             target="_blank"
             rel="noopener noreferrer"
+            className="
+              hover:-translate-y-1
+              hover:opacity-80
+              transition-all
+              duration-300
+            "
           >
-            <img src={assets.linkedin_icon} alt="linkedin" />
+            <img
+              src={assets.linkedin_icon}
+              alt="LinkedIn"
+              className="w-5 h-5"
+            />
           </a>
-
         </div>
       </motion.div>
-
-    </motion.div>
+    </motion.footer>
   );
-}
+};
 
 export default Footer;

@@ -1,50 +1,48 @@
 import assets from "../../assets/assets";
 
 const services = {
-  "web-development": {
-    title: "Web Development",
-    subtitle: "Build scalable, high-performance websites",
-    description:
-      "We create fast, modern, and conversion-focused websites tailored to your business.",
-    image: "/images/web.jpg",
-    features: [
-      "Responsive Design",
-      "SEO Optimized",
-      "High Performance",
-      "Custom Development"
-    ]
-  },
+  /* ================= GRAPHIC DESIGN ================= */
 
   "graphic-design": {
     title: "Graphic Designing",
-    subtitle: "Designs that speak your brand",
+
+    subtitle: "Creative visuals that strengthen your brand.",
+
     description:
-      "We craft visually stunning graphics that connect with your audience.",
+      "We create professional and engaging designs that help your brand communicate clearly and stand out across digital platforms.",
+
     image: "/images/graphic.jpg",
+
     features: [
       "Brand Identity",
       "Social Media Creatives",
       "Marketing Assets",
-      "UI Design"
-    ]
+      "Creative Visual Design",
+    ],
   },
 
-  // 🔥 UPDATED SOCIAL MEDIA SERVICE
-  "social-media": {
-  title: "Social Media Growth",
-  subtitle: "Grow faster on social media with real interactions, higher reach, and powerful engagement strategies.",
-  description: "",
+  /* ================= SOCIAL MEDIA ================= */
 
-  image: assets.social3,
+  "social-media": {
+    title: "Social Media Growth",
+
+    subtitle:
+      "Grow faster on social media with stronger reach, engagement and consistent growth strategies.",
+
+    description:
+      "Our social media growth solutions are designed to help improve visibility, engagement and audience reach.",
+
+    image: assets.social3,
 
     features: [
       "Real Likes & Comments",
       "High Video Views",
       "Reposts Included",
-      "Monthly Growth (20 Posts)"
+      "Monthly Growth (20 Posts)",
     ],
 
-    // 🔥 Engagement Packages
+    /* ENGAGEMENT PACKAGES */
+
     packages: [
       {
         name: "Starter Package",
@@ -52,84 +50,126 @@ const services = {
         details: [
           "500 Real Likes",
           "30 Real Comments",
-          "10 Repost",
-          "2,000 Video Views"
-        ]
+          "10 Reposts",
+          "2,000 Video Views",
+        ],
       },
+
       {
         name: "Basic Package",
         price: "$189/month",
         details: [
           "1,000 Real Likes",
           "50 Real Comments",
-          "15 Repost",
-          "4,000 Video Views"
-        ]
+          "15 Reposts",
+          "4,000 Video Views",
+        ],
       },
+
       {
         name: "Standard Package",
         price: "$249/month",
         details: [
           "1,500 Real Likes",
           "50 Real Comments",
-          "20 Repost",
-          "10,000 Video Views"
-        ]
+          "20 Reposts",
+          "10,000 Video Views",
+        ],
       },
+
       {
         name: "Advanced Package",
         price: "$399/month",
         details: [
           "3,000 Real Likes",
           "60 Real Comments",
-          "50 Repost",
-          "20,000 Video Views"
-        ]
+          "50 Reposts",
+          "20,000 Video Views",
+        ],
       },
+
       {
         name: "Pro Package",
         price: "$999/month",
         details: [
           "10,000 Real Likes",
           "60 Real Comments",
-          "100+ Repost",
-          "100,000+ Video Views"
-        ]
-      }
+          "100+ Reposts",
+          "100,000+ Video Views",
+        ],
+      },
     ],
 
-    // 🔥 USA Followers Section
+    /* USA FOLLOWERS */
+
     usaFollowers: [
-      { name: "1,000 USA Followers", price: "$89" },
-      { name: "2,000 USA Followers", price: "$179" },
-      { name: "5,000 USA Followers", price: "$449" },
-      { name: "10,000 USA Followers", price: "$799" },
-      { name: "20,000 USA Followers", price: "$1,499" }
+      {
+        name: "1,000 USA Followers",
+        price: "$89",
+      },
+      {
+        name: "2,000 USA Followers",
+        price: "$179",
+      },
+      {
+        name: "5,000 USA Followers",
+        price: "$449",
+      },
+      {
+        name: "10,000 USA Followers",
+        price: "$799",
+      },
+      {
+        name: "20,000 USA Followers",
+        price: "$1,499",
+      },
     ],
 
-    // 🔥 International Followers Section
+    /* INTERNATIONAL FOLLOWERS */
+
     internationalFollowers: [
-      { name: "10,000 International Followers", price: "$299" },
-      { name: "20,000 International Followers", price: "$549" },
-      { name: "50,000 International Followers", price: "$999" },
-      { name: "100,000 International Followers", price: "$1,799" },
-      { name: "200,000 International Followers", price: "$2,999" }
-    ]
+      {
+        name: "10,000 International Followers",
+        price: "$299",
+      },
+      {
+        name: "20,000 International Followers",
+        price: "$549",
+      },
+      {
+        name: "50,000 International Followers",
+        price: "$999",
+      },
+      {
+        name: "100,000 International Followers",
+        price: "$1,799",
+      },
+      {
+        name: "200,000 International Followers",
+        price: "$2,999",
+      },
+    ],
   },
 
-  "advertising": {
+  /* ================= ADVERTISING ================= */
+
+  advertising: {
     title: "Advertising",
-    subtitle: "Turn clicks into customers",
+
+    subtitle: "Reach the right audience and turn attention into results.",
+
     description:
-      "We create high-converting ad campaigns that drive real results.",
+      "We create strategic advertising campaigns focused on visibility, audience targeting, lead generation and measurable business growth.",
+
     image: "/images/ads.jpg",
+
     features: [
       "Paid Campaigns",
+      "Audience Targeting",
       "Lead Generation",
-      "Analytics Tracking",
-      "ROI Optimization"
-    ]
-  }
+      "Performance Optimization",
+    ],
+  },
 };
 
 export default services;

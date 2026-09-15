@@ -39,7 +39,7 @@ const ContactUs = () => {
     <motion.div
       initial="hidden"
       whileInView="visible"
-      transition={{ straggerchildren:0.2 }}
+      transition={{ staggerChildren: 0.2 }}
       viewport={{ once: false }} 
       id='contact-us'
       className='flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 pb-24 text-gray-700 dark:text-white'
@@ -154,11 +154,15 @@ const ContactUs = () => {
         </div>
 
         {/* SUBMIT */}
-        <button 
-          type="submit" 
-          className='w-max flex gap-2 bg-primary text-white text-sm px-10 py-3 rounded-full cursor-pointer hover:scale-103 transition-all'
+       <button
+          type="submit"
+          className="group relative overflow-hidden w-max flex items-center gap-2 bg-primary text-white text-sm px-10 py-3 rounded-full cursor-pointer border border-primary transition-all duration-500"
         >
-          Submit 
+          <span className="relative z-10 transition-colors duration-500 group-hover:text-primary">
+            Submit
+          </span>
+
+          <span className="absolute inset-0 bg-white -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out"></span>
         </button>
 
       </motion.form>
