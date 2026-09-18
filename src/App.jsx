@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+
 import Navbar from "./Components/Navbar/Navbar";
 import Hero from "./Components/Hero/Hero";
 import TrustedBy from "./Components/Trustedby/TrustedBy";
@@ -7,12 +8,12 @@ import Services from "./Components/Services/Services";
 import OurWork from "./Components/OurWork/OurWork";
 import Team from "./Components/Team/Team";
 import ContactUs from "./Components/ContactUs/ContactUs";
-import { Toaster } from "react-hot-toast";
 import Footer from "./Components/Footer/Footer";
-import { Routes, Route } from "react-router-dom";
 import ServiceDetails from "./Components/ServiceDetails/ServiceDetails";
 import About from "./Components/About/About";
 import SEO from "./Components/SEO/SEO";
+
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const [theme, setTheme] = useState(
@@ -24,8 +25,21 @@ function App() {
   const dotRef = useRef(null);
   const outlineRef = useRef(null);
 
-  const mouse = useRef({ x: 0, y: 0 });
-  const position = useRef({ x: 0, y: 0 });
+  const mouse = useRef({
+    x: 0,
+    y: 0,
+  });
+
+  const position = useRef({
+    x: 0,
+    y: 0,
+  });
+
+  const location = useLocation();
+
+  // =========================================
+  // CUSTOM CURSOR
+  // =========================================
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -35,6 +49,8 @@ function App() {
 
     document.addEventListener("mousemove", handleMouseMove);
 
+    let animationFrameId;
+
     const animate = () => {
       position.current.x +=
         (mouse.current.x - position.current.x) * 0.1;
@@ -43,74 +59,163 @@ function App() {
         (mouse.current.y - position.current.y) * 0.1;
 
       if (dotRef.current && outlineRef.current) {
-        dotRef.current.style.transform = `translate3d(${mouse.current.x - 6}px, ${mouse.current.y - 6}px, 0)`;
+        dotRef.current.style.transform = `translate3d(
+          ${mouse.current.x - 6}px,
+          ${mouse.current.y - 6}px,
+          0
+        )`;
 
-        outlineRef.current.style.transform = `translate3d(${position.current.x - 20}px, ${position.current.y - 20}px, 0)`;
+        outlineRef.current.style.transform = `translate3d(
+          ${position.current.x - 20}px,
+          ${position.current.y - 20}px,
+          0
+        )`;
       }
 
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     };
 
     animate();
 
     return () => {
-      document.removeEventListener(
-        "mousemove",
-        handleMouseMove
-      );
+      document.removeEventListener("mousemove", handleMouseMove);
+
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
+  // =========================================
+  // ROUTE + HASH SCROLL
+  // =========================================
 
-  const location = useLocation();
+  useEffect(() => {
+    // Agar URL me hash hai:
+    // /#services
+    // /#work
+    // /#about
+    // /#contact
 
-useEffect(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-}, [location.pathname]);
+    if (location.hash) {
+      const sectionId = location.hash.replace("#", "");
+
+      let attempts = 0;
+
+      const scrollToSection = () => {
+        const element = document.getElementById(sectionId);
+
+        if (element) {
+          const navbarHeight = 90;
+
+          const elementPosition =
+            element.getBoundingClientRect().top +
+            window.scrollY -
+            navbarHeight;
+
+          window.scrollTo({
+            top: elementPosition,
+            behavior: "smooth",
+          });
+
+          return;
+        }
+
+        attempts += 1;
+
+        // Home components render hone ka wait
+        if (attempts < 30) {
+          setTimeout(scrollToSection, 100);
+        }
+      };
+
+      setTimeout(scrollToSection, 100);
+
+      return;
+    }
+
+    // Agar koi hash nahi hai to normal page top se open hoga
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
+  }, [location.pathname, location.hash]);
 
   return (
     <div className="dark:bg-black relative">
-      {/* GLOBAL SEO */}
+      {/* =========================================
+          GLOBAL SEO
+      ========================================= */}
+
       <SEO
         title="Growth Pilot"
-        description="Modern web development, branding, UI/UX design and digital solutions."
-        keywords="web development, react developer, ui ux design, branding agency, website development"
+        description="Social media growth, graphic designing, SEO optimization and digital advertising solutions for modern businesses."
+        keywords="social media growth, graphic designing, SEO optimization, digital advertising, branding agency, digital marketing"
         image="https://growthpilotdigital.com/pre.jpeg"
         url="https://growthpilotdigital.com/"
       />
 
       <Toaster />
 
-      <Navbar theme={theme} setTheme={setTheme} />
+      {/* NAVBAR */}
 
-      {/* ROUTES */}
+      <Navbar
+        theme={theme}
+        setTheme={setTheme}
+      />
+
+      {/* =========================================
+          ROUTES
+      ========================================= */}
+
       <Routes>
+        {/* HOME PAGE */}
+
         <Route
           path="/"
           element={
             <>
               <Hero />
+
               <TrustedBy />
+
               <Services />
+
               <OurWork />
+
               <Team />
+
               <ContactUs />
             </>
           }
         />
 
-        <Route path="/services" element={<Services />} />
+        {/* OTHER PAGES */}
 
-        <Route path="/work" element={<OurWork />} />
+        <Route
+          path="/services"
+          element={<Services />}
+        />
 
-        <Route path="/team" element={<Team />} />
+        <Route
+          path="/work"
+          element={<OurWork />}
+        />
 
-        <Route path="/contact" element={<ContactUs />} />
+        <Route
+          path="/team"
+          element={<Team />}
+        />
 
-        <Route path="/about" element={<About />} />
+        <Route
+          path="/contact"
+          element={<ContactUs />}
+        />
+
+        <Route
+          path="/about"
+          element={<About />}
+        />
+
+        {/* SERVICE DETAILS */}
 
         <Route
           path="/:serviceId"
@@ -118,18 +223,46 @@ useEffect(() => {
         />
       </Routes>
 
+      {/* FOOTER */}
+
       <Footer theme={theme} />
 
-      {/* cursor */}
+      {/* =========================================
+          CUSTOM CURSOR
+      ========================================= */}
+
       <div
         ref={outlineRef}
-        className="fixed top-0 left-0 h-10 w-10 rounded-full border border-primary pointer-events-none z-9999"
-        style={{ transition: "transform 0.1s ease-out" }}
+        className="
+          fixed
+          top-0
+          left-0
+          h-10
+          w-10
+          rounded-full
+          border
+          border-primary
+          pointer-events-none
+          z-9999
+        "
+        style={{
+          transition: "transform 0.1s ease-out",
+        }}
       ></div>
 
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 h-2 w-2 rounded-full bg-primary pointer-events-none z-9999"
+        className="
+          fixed
+          top-0
+          left-0
+          h-2
+          w-2
+          rounded-full
+          bg-primary
+          pointer-events-none
+          z-9999
+        "
       ></div>
     </div>
   );

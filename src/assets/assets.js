@@ -35,6 +35,7 @@ import google_logo from './google_logo.svg'
 import menu_icon_dark from './menu_icon_dark.svg'
 import sun_icon from './sun_icon.svg'
 import moon_icon from './moon_icon.svg'
+import grouplogo from './group_profile.png'
 
 import logowhite1 from '../assets/logowhite1.PNG'
 import logoBlack1 from '../assets/logoBlack1.PNG'
@@ -58,7 +59,7 @@ import bgimg4 from '../assets/bgimg4.png'
 
 
 
-
+import SEO from '../assets/SEO.png'
 
 import instaimg from '../assets/instaimg.PNG'
 
@@ -88,6 +89,8 @@ export const company_logos = [
 const assets = {
 
   webd2,
+  grouplogo,
+  SEO,
   bgimg2,
   bgimg3,
   bgimg4,

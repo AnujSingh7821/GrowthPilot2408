@@ -3,6 +3,7 @@
 import React from "react";
 import assets from "../../assets/assets";
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
 const Footer = ({ theme }) => {
   return (
@@ -47,22 +48,26 @@ const Footer = ({ theme }) => {
             dark:text-gray-400
           "
         >
-          <img
-            src={
-              theme === "dark"
-                ? assets.logoBlack1
-                : assets.logowhite1
-            }
-            className="w-36 sm:w-44 mb-5"
-            alt="Growth Pilot"
-          />
+          {/* LOGO */}
+
+          <Link to="/">
+            <img
+              src={
+                theme === "dark"
+                  ? assets.logoBlack1
+                  : assets.logowhite1
+              }
+              className="w-36 sm:w-44 mb-5"
+              alt="Growth Pilot"
+            />
+          </Link>
 
           <p className="max-w-md text-sm leading-6 mb-7">
             From strategy to execution, we craft digital solutions that move
             your business forward.
           </p>
 
-          {/* NAV LINKS */}
+          {/* ================= NAV LINKS ================= */}
 
           <ul
             className="
@@ -75,9 +80,11 @@ const Footer = ({ theme }) => {
               font-medium
             "
           >
+            {/* HOME */}
+
             <li>
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="
                   hover:text-primary
                   transition-colors
@@ -85,12 +92,14 @@ const Footer = ({ theme }) => {
                 "
               >
                 Home
-              </a>
+              </Link>
             </li>
 
+            {/* SERVICES */}
+
             <li>
-              <a
-                href="/services"
+              <Link
+                to="/services"
                 className="
                   hover:text-primary
                   transition-colors
@@ -98,12 +107,14 @@ const Footer = ({ theme }) => {
                 "
               >
                 Services
-              </a>
+              </Link>
             </li>
 
+            {/* OUR WORK */}
+
             <li>
-              <a
-                href="/work"
+              <Link
+                to="/work"
                 className="
                   hover:text-primary
                   transition-colors
@@ -111,12 +122,14 @@ const Footer = ({ theme }) => {
                 "
               >
                 Our Work
-              </a>
+              </Link>
             </li>
 
+            {/* ABOUT */}
+
             <li>
-              <a
-                href="/about"
+              <Link
+                to="/about"
                 className="
                   hover:text-primary
                   transition-colors
@@ -124,12 +137,14 @@ const Footer = ({ theme }) => {
                 "
               >
                 About
-              </a>
+              </Link>
             </li>
 
+            {/* CONTACT */}
+
             <li>
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="
                   hover:text-primary
                   transition-colors
@@ -137,12 +152,12 @@ const Footer = ({ theme }) => {
                 "
               >
                 Contact Us
-              </a>
+              </Link>
             </li>
           </ul>
         </motion.div>
 
-        {/* RIGHT SIDE - WHATSAPP */}
+        {/* ================= RIGHT SIDE - WHATSAPP ================= */}
 
         <motion.div
           initial={{ opacity: 0, x: 30 }}
@@ -296,7 +311,7 @@ const Footer = ({ theme }) => {
         </motion.div>
       </div>
 
-      {/* DIVIDER */}
+      {/* ================= DIVIDER ================= */}
 
       <hr className="border-gray-200 dark:border-gray-700 mt-10 mb-6" />
 
@@ -323,9 +338,11 @@ const Footer = ({ theme }) => {
           Copyright 2026 © Growth Pilot. All Rights Reserved.
         </p>
 
-        {/* SOCIAL ICONS */}
+        {/* ================= SOCIAL ICONS ================= */}
 
         <div className="flex items-center gap-4">
+          {/* FACEBOOK */}
+
           <a
             href="https://www.facebook.com/share/1B9CezTiZr/"
             target="_blank"
@@ -343,6 +360,8 @@ const Footer = ({ theme }) => {
               className="w-5 h-5"
             />
           </a>
+
+          {/* TWITTER / X */}
 
           <a
             href="https://x.com/growth_pilot"
@@ -362,6 +381,8 @@ const Footer = ({ theme }) => {
             />
           </a>
 
+          {/* INSTAGRAM */}
+
           <a
             href="https://www.instagram.com/growthpilot_official?igsh=MTc3bHZiN2ppbWlybg=="
             target="_blank"
@@ -379,6 +400,8 @@ const Footer = ({ theme }) => {
               className="w-5 h-5"
             />
           </a>
+
+          {/* LINKEDIN */}
 
           <a
             href="https://www.linkedin.com/in/growth-pilot-3aa6b23b8"

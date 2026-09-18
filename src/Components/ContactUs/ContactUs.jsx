@@ -126,7 +126,7 @@ const ContactUs = () => {
                 value="Web Development" 
                 className='bg-white dark:bg-gray-900 text-gray-700 dark:text-white'
               >
-                Web Development
+                SEO Optimization
               </option>
 
               <option 
