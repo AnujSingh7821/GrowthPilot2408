@@ -180,7 +180,7 @@ const Footer = ({ theme }) => {
               dark:text-white
             "
           >
-            Join Our Community
+            Connect with us on WhatsApp
           </h3>
 
           <p className="text-sm mt-2 leading-6">
@@ -247,7 +247,7 @@ const Footer = ({ theme }) => {
                       dark:text-white
                     "
                   >
-                    Growth Pilot Community
+                    Growth Pilot 
                   </p>
 
                   <p className="text-xs mt-1 text-gray-500 dark:text-gray-400">
