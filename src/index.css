@@ -1,17 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-*{
-    font-family: "Manrope", sans-serif;
-    font-weight: 500;
-    cursor: none;
+@theme {
+  --color-primary: #5044E5;
 }
 
+html {
+  scroll-padding-top: 90px;
+}
 
-@theme{
-    --color-primary: #5044E5;
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  cursor: auto;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a,
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+  cursor: text;
+}
+
+/* Hide the native cursor only while our custom cursor is visible. */
+@media (hover: hover) and (pointer: fine) {
+  html.custom-cursor-active [data-site-content],
+  html.custom-cursor-active [data-site-content] * {
+    cursor: none !important;
+  }
+}
+
+.gp-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-radius: 9999px;
+  opacity: 0;
+  will-change: transform;
+}
+
+.gp-cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-primary);
+  z-index: 2147483646;
+}
+
+.gp-cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary);
+  z-index: 2147483647;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .gp-cursor {
+    display: none;
+  }
 }

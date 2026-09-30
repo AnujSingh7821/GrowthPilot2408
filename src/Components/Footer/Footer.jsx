@@ -24,292 +24,97 @@ const Footer = ({ theme }) => {
     >
       {/* ================= FOOTER TOP ================= */}
 
-      <div
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: false }}
         className="
-          grid
-          lg:grid-cols-2
-          gap-12
-          lg:gap-20
+          flex
+          flex-col
           items-start
+          text-gray-700
+          dark:text-gray-400
         "
       >
-        {/* LEFT SIDE */}
+        {/* LOGO */}
 
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: false }}
+        <Link to="/">
+          <img
+            src={
+              theme === "dark"
+                ? assets.logoBlack1
+                : assets.logowhite1
+            }
+            className="w-36 sm:w-44 mb-5"
+            alt="Growth Pilot"
+          />
+        </Link>
+
+        <p className="max-w-md text-sm leading-6 mb-7">
+          From strategy to execution, we craft digital solutions that move
+          your business forward.
+        </p>
+
+        {/* ================= NAV LINKS ================= */}
+
+        <ul
           className="
             flex
-            flex-col
-            items-start
-            text-gray-700
-            dark:text-gray-400
+            flex-wrap
+            items-center
+            gap-x-7
+            gap-y-3
+            text-sm
+            font-medium
           "
         >
-          {/* LOGO */}
-
-          <Link to="/">
-            <img
-              src={
-                theme === "dark"
-                  ? assets.logoBlack1
-                  : assets.logowhite1
-              }
-              className="w-36 sm:w-44 mb-5"
-              alt="Growth Pilot"
-            />
-          </Link>
-
-          <p className="max-w-md text-sm leading-6 mb-7">
-            From strategy to execution, we craft digital solutions that move
-            your business forward.
-          </p>
-
-          {/* ================= NAV LINKS ================= */}
-
-          <ul
-            className="
-              flex
-              flex-wrap
-              items-center
-              gap-x-7
-              gap-y-3
-              text-sm
-              font-medium
-            "
-          >
-            {/* HOME */}
-
-            <li>
-              <Link
-                to="/"
-                className="
-                  hover:text-primary
-                  transition-colors
-                  duration-300
-                "
-              >
-                Home
-              </Link>
-            </li>
-
-            {/* SERVICES */}
-
-            <li>
-              <Link
-                to="/services"
-                className="
-                  hover:text-primary
-                  transition-colors
-                  duration-300
-                "
-              >
-                Services
-              </Link>
-            </li>
-
-            {/* OUR WORK */}
-
-            <li>
-              <Link
-                to="/work"
-                className="
-                  hover:text-primary
-                  transition-colors
-                  duration-300
-                "
-              >
-                Our Work
-              </Link>
-            </li>
-
-            {/* ABOUT */}
-
-            <li>
-              <Link
-                to="/about"
-                className="
-                  hover:text-primary
-                  transition-colors
-                  duration-300
-                "
-              >
-                About
-              </Link>
-            </li>
-
-            {/* CONTACT */}
-
-            <li>
-              <Link
-                to="/contact"
-                className="
-                  hover:text-primary
-                  transition-colors
-                  duration-300
-                "
-              >
-                Contact Us
-              </Link>
-            </li>
-          </ul>
-        </motion.div>
-
-        {/* ================= RIGHT SIDE - WHATSAPP ================= */}
-
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: false }}
-          className="
-            w-full
-            lg:max-w-lg
-            lg:ml-auto
-            text-gray-600
-            dark:text-gray-400
-          "
-        >
-          <h3
-            className="
-              text-lg
-              font-semibold
-              text-gray-800
-              dark:text-white
-            "
-          >
-            Connect with us on WhatsApp
-          </h3>
-
-          <p className="text-sm mt-2 leading-6">
-            Get updates, offers & connect with us directly on WhatsApp.
-          </p>
-
-          {/* WHATSAPP BOX */}
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: false }}
-            className="mt-6"
-          >
-            <div
-              className="
-                flex
-                sm:flex-row
-                flex-col
-                sm:items-center
-                sm:justify-between
-                gap-4
-                border
-                border-gray-200
-                dark:border-gray-700
-                rounded-2xl
-                bg-white
-                dark:bg-gray-800
-                p-4
-                shadow-sm
-                hover:shadow-md
-                transition-all
-                duration-300
-              "
+          <li>
+            <Link
+              to="/"
+              className="hover:text-primary transition-colors duration-300"
             >
-              <div className="flex items-center gap-3">
-                <div
-                  className="
-                    w-12
-                    h-12
-                    rounded-xl
-                    bg-green-50
-                    dark:bg-green-500/10
-                    flex
-                    items-center
-                    justify-center
-                    shrink-0
-                  "
-                >
-                  <img
-                    src={assets.whatsapp_icon1}
-                    alt="WhatsApp"
-                    className="w-8 h-8"
-                  />
-                </div>
+              Home
+            </Link>
+          </li>
 
-                <div>
-                  <p
-                    className="
-                      text-sm
-                      font-semibold
-                      text-gray-800
-                      dark:text-white
-                    "
-                  >
-                    Growth Pilot 
-                  </p>
+          <li>
+            <Link
+              to="/services"
+              className="hover:text-primary transition-colors duration-300"
+            >
+              Services
+            </Link>
+          </li>
 
-                  <p className="text-xs mt-1 text-gray-500 dark:text-gray-400">
-                    Join us on WhatsApp
-                  </p>
-                </div>
-              </div>
+          <li>
+            <Link
+              to="/work"
+              className="hover:text-primary transition-colors duration-300"
+            >
+              Our Work
+            </Link>
+          </li>
 
-              <a
-                href="https://wa.me/919664145546"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                  group
-                  relative
-                  overflow-hidden
-                  flex
-                  items-center
-                  justify-center
-                  bg-primary
-                  text-white
-                  px-6
-                  py-2.5
-                  rounded-full
-                  text-sm
-                  font-medium
-                  border
-                  border-primary
-                  transition-all
-                  duration-500
-                  whitespace-nowrap
-                "
-              >
-                <span
-                  className="
-                    relative
-                    z-10
-                    transition-colors
-                    duration-500
-                    group-hover:text-primary
-                  "
-                >
-                  Join Now
-                </span>
+          <li>
+            <Link
+              to="/about"
+              className="hover:text-primary transition-colors duration-300"
+            >
+              About
+            </Link>
+          </li>
 
-                <span
-                  className="
-                    absolute
-                    inset-0
-                    bg-white
-                    -translate-x-full
-                    group-hover:translate-x-0
-                    transition-transform
-                    duration-500
-                    ease-out
-                  "
-                />
-              </a>
-            </div>
-          </motion.div>
-        </motion.div>
-      </div>
+          <li>
+            <Link
+              to="/contact"
+              className="hover:text-primary transition-colors duration-300"
+            >
+              Contact Us
+            </Link>
+          </li>
+        </ul>
+      </motion.div>
 
       {/* ================= DIVIDER ================= */}
 
